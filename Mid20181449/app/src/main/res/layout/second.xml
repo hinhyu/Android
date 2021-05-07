@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/tv1"
+            android:layout_gravity="center_vertical"
+            android:layout_height="150dp"
+            android:src="@drawable/dog" />
+        <RatingBar
+            android:id="@+id/rbar1"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" >
+        </RatingBar>
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/tv2"
+            android:layout_gravity="center_vertical"
+            android:layout_height="150dp"
+            android:src="@drawable/cat" />
+        <RatingBar
+            android:id="@+id/rbar2"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" >
+        </RatingBar>
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/tv3"
+            android:layout_gravity="center_vertical"
+            android:layout_height="150dp"
+            android:src="@drawable/rabbit" />
+        <RatingBar
+            android:id="@+id/rbar3"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" >
+        </RatingBar>
+    </TableRow>
+    <Button
+        android:id="@+id/btnReturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_span="2"
+        android:text="돌아가기" />
+</GridLayout>
