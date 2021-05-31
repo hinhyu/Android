@@ -1,4 +1,3 @@
 package com.example.myopenhospital
 
-class Hospital {
-}
+data class Hospital (val yadmNm:String?, val sidoNm:String?, val phone_number:String?)

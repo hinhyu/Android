@@ -1,4 +1,3 @@
 package com.example.mynavermovie
 
-class Movieitem {
-}
+data class Movieitem (val title:String, val score1:String, val score2:String, val reserve:String, val imgsrc:String)

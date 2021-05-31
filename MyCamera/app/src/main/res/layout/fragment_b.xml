@@ -5,10 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".FragmentB">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사진 가져오기"
+        android:id="@+id/gallaryButton"/>
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/output3"
+        android:src="@drawable/ic_launcher_foreground"/>
 
 </FrameLayout>

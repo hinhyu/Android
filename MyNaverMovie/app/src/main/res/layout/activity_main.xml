@@ -12,19 +12,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/startButton"
         android:text="크롤링 시작"/>
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#40C4FF">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/output1"
-                android:textSize="20sp"/>
-        </LinearLayout>
-    </ScrollView>
+        android:id="@+id/listview"/>
 </LinearLayout>

@@ -1,10 +1,18 @@
 package com.example.mycamera
 
+import android.app.Activity
+import android.content.Intent
+import android.graphics.BitmapFactory
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_a.view.*
+import kotlinx.android.synthetic.main.fragment_b.*
+import kotlinx.android.synthetic.main.fragment_b.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +28,7 @@ class FragmentB : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    var uri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +43,34 @@ class FragmentB : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_b, container, false)
+        val view = inflater.inflate(R.layout.fragment_b, container, false)
+        view.gallaryButton.setOnClickListener {
+            getFromAlbum()
+        }
+        return view
+    }
+
+    fun getFromAlbum(){
+        val intent = Intent("android.intent.action.GET_CONTENT")
+        intent.type = "image/*"
+        startActivityForResult(intent, 102)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when (requestCode){
+            102 -> {
+                if (resultCode == Activity.RESULT_OK){
+                    if(Build.VERSION.SDK_INT >= 19){
+                        uri = data?.data
+                        if(uri != null){
+                            val bitmap = BitmapFactory.decodeStream(requireActivity().contentResolver.openInputStream(uri!!))
+                            output3.setImageBitmap(bitmap)
+                        }
+                    }
+                }
+            }
+        }
     }
 
     companion object {
